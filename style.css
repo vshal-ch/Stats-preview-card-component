@@ -1,0 +1,169 @@
+:root {
+  --col-main-background: hsl(233, 47%, 7%);
+  --col-card-background: hsl(244, 38%, 16%);
+  --col-accent: hsl(277, 64%, 61%);
+  --col-heading: hsl(0, 0%, 100%);
+  --col-para: hsla(0, 0%, 100%, 0.75);
+  --col-stat-heading: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 15px;
+  background-color: var(--col-main-background);
+}
+
+.wrapper {
+  display: grid;
+  place-items: center;
+  padding: 1em 0;
+}
+
+.container {
+  width: 90%;
+  color: white;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 245px;
+  background: linear-gradient(
+      90deg,
+      hsla(277, 65%, 50%, 0.5),
+      hsla(277, 65%, 50%, 0.5)
+    ),
+    url("images/image-header-mobile.jpg") no-repeat center;
+  background-size: 100%, cover;
+}
+
+.content {
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+  background-color: var(--col-card-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapperdiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 380px;
+}
+.heading {
+  font-size: 1.85em;
+  font-family: "Inter";
+  line-height: 1em;
+  padding: 0.7em 0;
+  color:var(--col-heading);
+}
+
+.heading > span {
+  color: var(--col-accent);
+}
+
+.text{
+  font-family: 'Lexend Deca';
+  color:var(--col-para);
+  line-height: 1.5em;
+  font-size: 0.9em;
+  width:30ch;
+}
+
+.stats{
+  margin:1em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat{
+  margin-top:1em;
+}
+
+.stat .num{
+  font-family: 'Inter';
+  font-size: 1.6em;
+  line-height: 1.5em;
+  color: var(--col-heading);
+}
+.stat .label{
+  font-family: 'Inter';
+  text-transform: uppercase;
+  font-size: 0.75em;
+  color:var(--col-stat-heading);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--col-accent);
+}
+.attribution a {
+  color: var(--col-heading);
+  text-decoration: none;
+}
+
+@media only screen and (min-width:800px){
+  
+  .wrapper {
+    padding:0;
+  }
+  
+  .container {
+    width: 85%;
+    max-width: unset;
+    flex-direction: row-reverse;
+    max-width: 950px;
+  }
+  
+  .image {
+    height: inherit;
+    background: linear-gradient(
+        90deg,
+        hsla(277, 65%, 50%, 0.5),
+        hsla(277, 65%, 50%, 0.5)
+      ),
+      url("images/image-header-desktop.jpg") no-repeat center;
+  }
+  
+  .content {
+    padding: 1em;
+    text-align: left;
+  }
+
+  .wrapperdiv{
+    align-items: flex-start;
+  }
+  
+  .heading {
+    font-size: 2em;
+    margin-top: 0.8em;
+    line-height: 1.2em;
+  }
+  
+  .text{
+    width:unset;
+  }
+  
+  .stats{
+    margin-top: 2.5em;
+    margin-bottom: 2em;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+  }
+}
